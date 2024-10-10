@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://kit.fontawesome.com/0a7e2ccef9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/quiet-sans" rel="stylesheet">
+    <title>HTML Cheat Sheet</title>
+    <link href="book_color.svg" rel="icon" type="image/x-icon">
+
+    <style>
+        .up_nav {
+            position: fixed;
+            background-color: #313131;
+            color: #d0d0d0;
+            border-radius: 100%;
+            height: 50px;
+            width: 50px;
+            margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: #313131;
+            padding: 5px;
+            border-top: #737373;
+            border-top-style: solid;
+        }
+
+        body {
+            background-color: #1f1f1f;
+            font-family: 'Quiet Sans', sans-serif;
+
+            margin: 0 auto;
+            color: #d0d0d0;
+        }
+
+        .body_wrapper {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #313131 #1f1f1f;
+            scrollbar-track-color: #1f1f1f;
+            --webkit-scrollbar-width: thin;
+            --webkit-scrollbar-color: #313131 #1f1f1f;
+            --webkit-scrollbar-track-color: #1f1f1f;
+
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            padding-top: 20px;
+            font-size: 40px;
+            width: fit-content;
+            background: linear-gradient(90deg, #bf00ff, #ff4d00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            width: fit-content;
+            background: linear-gradient(90deg, #bf00ff, #ff4d00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        code {
+            margin: 1px;
+            background-color: #313131;
+            border: 1px solid #3d3d3d;
+            border-radius: 4px;
+            display: inline-block;
+            font-family: Consolas, monospace;
+            font-size: 15px;
+            padding: 2px 6px;
+        }
+
+        .main_title {
+            font-size: 50px;
+            margin-bottom: 0;
+        }
+
+        .main_title_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .main_button_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        hr {
+            background: linear-gradient(90deg, #e600ff, #ff8800);
+            height: 2px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        button {
+            font-family: 'Quiet Sans', sans-serif;
+            background-color: #313131;
+            border: 1px solid #3d3d3d;
+            border-radius: 4px;
+            color: #d0d0d0;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            padding: 5px 10px;
+            transition: all ease 0.1s;
+        }
+
+        button:hover {
+            background-color: #3d3d3d;
+            scale: 1.03;
+        }
+
+        button:active {
+            scale: 0.97;
+        }
+
+    </style>
+
+    <script>
+        function scrollToID(id) {
+            document.getElementById(id).scrollIntoView({behavior: "smooth"});
+        }
+    </script>
+</head>
+    <body>
+        <button class="up_nav" onclick="scrollToID('title')">
+            <in class="fa-solid fa-arrow-up"></in>
+        </button>
+
+        <div class="body_wrapper">
+            <div class="main_title_wrapper" id="title">
+                <h1 class="main_title"><i class="fa-solid fa-file-lines"></i>Cheat Sheet</h1>
+            </div>
+            <div class="main_button_wrapper">
+                <div>
+                    <button onclick="scrollToID('html_tags')"><i class="fa-solid fa-code"></i>Html Tags</button>
+                    <button onclick="scrollToID('web_tech')"><i class="fa-solid fa-gear"></i>Web Techniques</button>
+                    <button onclick="scrollToID('css_rules')"><i class="fa-solid fa-sheet-plastic"></i>Css Rules</button>
+                </div>
+            </div>
+            <article id="html_tags">
+                <h1><i class="fa-solid fa-code"></i>HTML Tags</h1>
+                <hr>
+                <h2><i class="fa-solid fa-folder-tree"></i>Document Structure</h2>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document type and version of HTML.</li>
+                    <li><code>&lt;html&gt;</code>: Root element of an HTML document.</li>
+                    <li><code>&lt;head&gt;</code>: Contains metadata like title, links to stylesheets, and scripts.</li>
+                    <li><code>&lt;title&gt;</code>: Defines the title of the webpage, shown on the browser tab.</li>
+                    <li><code>&lt;body&gt;</code>: Contains all the visible content of the webpage.</li>
+                </ul>
+                <h2><i class="fa-solid fa-quote-right"></i>Text Elements</h2>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: Heading tags, with <code>&lt;h1&gt;</code> being the highest level and <code>&lt;h6&gt;</code> the lowest.</li>
+                    <li><code>&lt;p&gt;</code>: Paragraph tag, used for text blocks.</li>
+                    <li><code>&lt;br&gt;</code>: Line break, moves the text to a new line.</li>
+                    <li><code>&lt;hr&gt;</code>: Horizontal rule, creates a break in content.</li>
+                </ul>
+                <h2><i class="fa-solid fa-font"></i>Formatting Tags</h2>
+                <ul>
+                    <li><code>&lt;strong&gt;</code>: Defines important text, usually displayed in bold.</li>
+                    <li><code>&lt;em&gt;</code>: Emphasized text, typically italicized.</li>
+                    <li><code>&lt;b&gt;</code>: Bold text without implying importance.</li>
+                    <li><code>&lt;i&gt;</code>: Italic text without emphasis.</li>
+                    <li><code>&lt;u&gt;</code>: Underlined text.</li>
+                </ul>
+                <h2><i class="fa-solid fa-music"></i>Links and Media</h2>
+                <ul>
+                    <li><code>&lt;a href=&quot;url&quot;&gt;</code>: Anchor tag for links. The <code>href</code> attribute specifies the link destination.</li>
+                    <li><code>&lt;img src=&quot;url&quot; alt=&quot;description&quot;&gt;</code>: Embeds an image. The <code>src</code> is the image source, and <code>alt</code> provides alternative text.</li>
+                    <li><code>&lt;video src=&quot;url&quot; controls&gt;</code>: Embeds a video file. The <code>controls</code> attribute allows play/pause buttons.</li>
+                    <li><code>&lt;audio src=&quot;url&quot; controls&gt;</code>: Embeds an audio file with control options.</li>
+                </ul>
+                <h2><i class="fa-solid fa-list"></i>Lists</h2>
+                <ul>
+                    <li><code>&lt;ul&gt;</code>: Unordered list.<ul>
+                        <li><code>&lt;li&gt;</code>: List item, used inside lists.</li>
+                    </ul>
+                    </li>
+                    <li><code>&lt;ol&gt;</code>: Ordered list (numbered).<ul>
+                        <li><code>&lt;li&gt;</code>: List item, used inside lists.</li>
+                    </ul>
+                    </li>
+                    <li><code>&lt;dl&gt;</code>: Definition list.<ul>
+                        <li><code>&lt;dt&gt;</code>: Definition term.</li>
+                        <li><code>&lt;dd&gt;</code>: Definition description.</li>
+                    </ul>
+                    </li>
+                </ul>
+                <h2><i class="fa-solid fa-table"></i>Tables</h2>
+                <ul>
+                    <li><code>&lt;table&gt;</code>: Defines a table.</li>
+                    <li><code>&lt;tr&gt;</code>: Table row.</li>
+                    <li><code>&lt;th&gt;</code>: Table header cell.</li>
+                    <li><code>&lt;td&gt;</code>: Table data cell.</li>
+                    <li><code>&lt;thead&gt;</code>: Groups header rows in a table.</li>
+                    <li><code>&lt;tbody&gt;</code>: Groups body rows in a table.</li>
+                    <li><code>&lt;tfoot&gt;</code>: Groups footer rows in a table.</li>
+                </ul>
+                <h2><i class="fa-solid fa-envelope-open-text"></i>Forms</h2>
+                <ul>
+                    <li><code>&lt;form&gt;</code>: Container for input elements like text fields, checkboxes, and buttons.<ul>
+                        <li><code>&lt;input type=&quot;text&quot;&gt;</code>: Single-line text input field.</li>
+                        <li><code>&lt;input type=&quot;password&quot;&gt;</code>: Password input field (characters are hidden).</li>
+                        <li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>: Checkbox input.</li>
+                        <li><code>&lt;input type=&quot;radio&quot;&gt;</code>: Radio button input (only one can be selected).</li>
+                        <li><code>&lt;textarea&gt;</code>: Multi-line text input.</li>
+                        <li><code>&lt;button&gt;</code>: Clickable button.</li>
+                        <li><code>&lt;select&gt;</code>: Dropdown list.<ul>
+                            <li><code>&lt;option&gt;</code>: Defines an option in a dropdown list.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                <h2><i class="fa-solid fa-arrows-to-circle"></i>Semantic Elements (Structure)</h2>
+                <ul>
+                    <li><code>&lt;header&gt;</code>: Defines a header section.</li>
+                    <li><code>&lt;footer&gt;</code>: Defines a footer section.</li>
+                    <li><code>&lt;article&gt;</code>: Defines an independent piece of content.</li>
+                    <li><code>&lt;section&gt;</code>: Defines sections of a document.</li>
+                    <li><code>&lt;nav&gt;</code>: Navigation links section.</li>
+                    <li><code>&lt;aside&gt;</code>: Sidebar content or tangential content.</li>
+                    <li><code>&lt;main&gt;</code>: The main content of the document.</li>
+                </ul>
+                <h2><i class="fa-solid fa-align-center"></i>Div and Span</h2>
+                <ul>
+                    <li><code>&lt;div&gt;</code>: Block-level container used for grouping elements.</li>
+                    <li><code>&lt;span&gt;</code>: Inline container used for styling parts of text or grouping inline elements.</li>
+                </ul>
+                <h2><i class="fa-solid fa-circle-info"></i>Meta Tags</h2>
+                <ul>
+                    <li><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>: Defines the character set (UTF-8 is most common).</li>
+                    <li><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code>: Ensures responsive design on mobile devices.</li>
+                    <li><code>&lt;meta name=&quot;description&quot; content=&quot;Page description&quot;&gt;</code>: Provides a description for search engines.</li>
+                </ul>
+                <h2><i class="fa-brands fa-js"></i>Script and Style</h2>
+                <ul>
+                    <li><code>&lt;style&gt;</code>: Embeds CSS styles within the document.</li>
+                    <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>: Links an external CSS file.</li>
+                    <li><code>&lt;script src=&quot;script.js&quot;&gt;</code>: Links an external JavaScript file.</li>
+                    <li><code>&lt;noscript&gt;</code>: Content displayed if the browser doesn&#39;t support JavaScript.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-tags"></i>Attributes</h2>
+                <p>Attributes are tags on an HTML element that have an impact on the function of an element. <br/> Common attributes include:</p>
+                <ul>
+                    <li><code>id</code>: Unique identifier for an element.</li>
+                    <li><code>class</code>: Groups elements for styling with CSS.</li>
+                    <li><code>href</code>: URL of the link destination.</li>
+                    <li><code>src</code>: URL of the image, video, or audio source.</li>
+                    <li><code>alt</code>: Alternative text for images.</li>
+                    <li><code>type</code>: Type of input field (text, password, checkbox, radio).</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-message"></i>Comments</h2>
+                <p>Comments are used to add notes to the code that are not displayed in the browser.</p>
+                <code>&lt;!-- This is a comment --&gt;</code>
+
+                <h2><i class="fa-solid fa-person"></i>Entities</h2>
+                <p>Entities are special characters that cannot be used directly in HTML.</p>
+                <ul>
+                    <li><code>&amp;lt;</code>: Less than (&lt;).</li>
+                    <li><code>&amp;gt;</code>: Greater than (&gt;).</li>
+                    <li><code>&amp;quot;</code>: Double quote (&quot;).</li>
+                    <li><code>&amp;apos;</code>: Single quote (&apos;).</li>
+                    <li><code>&amp;amp;</code>: Ampersand (&amp;).</li>
+                </ul>
+            </article>
+            <article id="web_tech">
+                <h1><i class="fa-solid fa-gear"></i>Web Techniques</h1>
+                <hr />
+                <h2><i class="fa-solid fa-map"></i>URL Structure</h2>
+
+                <code>https://example.com/index.html</code>
+
+                <ul>
+                    <li><code>Scheme (http, https)</code>: Protocol used to access the resource.</li>
+                    <li><code>Domain name (example.com)</code>: The Server the resource is at.</li>
+                    <li><code>Path: (/index.html)</code>: The Path the resource is at on the server.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-tower-broadcast"></i>Web Communication</h2>
+
+                <ul>
+                    <li><code>Server</code>: An external location that can receive and send information.</li>
+                    <li><code>Browser/Web Client</code>The client the user interfaces with that can send and receive information from the server.</li>
+                    <li><code>Page</code>A resource on the server that can be sent to the client that the browser can render (show to the user).</li>
+                </ul>
+
+                <h2><i class="fa-brands fa-chrome"></i>Popular Web Browsers</h2>
+
+                <ul>
+                    <li><code>Google Chrome</code>: A popular browser developed by Google.</li>
+                    <li><code>Firefox</code>: An open-source browser developed by Mozilla.</li>
+                    <li><code>Safari</code>: A browser developed by Apple.</li>
+                    <li><code>Microsoft Edge</code>: A browser developed by Microsoft.</li>
+                    <li><code>Opera</code>: A browser developed by Opera Software.</li>
+                    <li><code>Brave</code>: A privacy-focused browser.</li>
+                    <li><code>Vivaldi</code>: A browser developed by Vivaldi Technologies.</li>
+                    <li><code>UC Browser</code>: A browser developed by UCWeb.</li>
+                    <li><code>Internet Explorer</code>: A browser developed by Microsoft.</li>
+                    <li><code>Maxthon</code>: A browser developed by Maxthon Ltd.</li>
+                    <li><code>Tor Browser</code>: A browser focused on extreme privacy.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-server"></i>Popular Web Servers</h2>
+
+                <ul>
+                    <li><code>Apache</code>: An open-source web server.</li>
+                    <li><code>Nginx</code>: A high-performance web server.</li>
+                    <li><code>Microsoft IIS</code>: A web server developed by Microsoft.</li>
+                    <li><code>LiteSpeed</code>: A commercial web server.</li>
+                    <li><code>Google Web Server</code>: A web server developed by Google.</li>
+                    <li><code>Tomcat</code>: An open-source Java Servlet container.</li>
+                    <li><code>Node.js</code>: A JavaScript runtime that can be used as a web server.</li>
+                    <li><code>Caddy</code>: An open-source web server with automatic HTTPS.</li>
+                </ul>
+            </article>
+            <article id="css_rules">
+                <h1><i class="fa-solid fa-sheet-plastic"></i>CSS Rules</h1>
+                <hr />
+
+                <h2><i class="fa-solid fa-code"></i>Inline, Internal, External</h2>
+                <ul>
+                    <li><code>Inline CSS</code>: Applied directly to an element using the <code>style</code> attribute.</li>
+                    <li><code>Internal CSS</code>: Defined in the <code>&lt;style&gt;</code> element within the <code>&lt;head&gt;</code> section.</li>
+                    <li><code>External CSS</code>: Linked to the HTML document using the <code>&lt;link&gt;</code> element.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-code"></i>Syntax</h2>
+                <p>CSS rules consist of a selector and a declaration block.</p>
+                <code>
+                    h1 { <br>
+                    ‎ ‎ ‎ color: red; <br>
+                    } <br>
+                </code>
+
+                <h2><i class="fa-solid fa-object-ungroup"></i>Selector Types</h2>
+                <ul>
+                    <li><code>Element Selector</code>: Selects elements based on their tag name.</li>
+                    <li><code>Class Selector</code>: Selects elements with a specific class attribute.</li>
+                    <li><code>ID Selector</code>: Selects an element with a specific id attribute.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-bars-progress"></i>Properties</h2>
+                <p>Properties can be used to apply styles to specific elements, selected by a selector. <br>Some common properties include:</p>
+                <ul>
+                    <li><code>color</code>: Text color.</li>
+                    <li><code>font-size</code>: Font size.</li>
+                    <li><code>background-color</code>: Background color.</li>
+                    <li><code>border</code>: Border around an element.</li>
+                    <li><code>margin</code>: Space outside an element.</li>
+                    <li><code>padding</code>: Space inside an element.</li>
+                    <li><code>width</code>: Width of an element.</li>
+                    <li><code>height</code>: Height of an element.</li>
+                    <li><code>display</code>: How an element is displayed.</li>
+                    <li><code>position</code>: Positioning of an element.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-palette"></i>Color</h2>
+                <p>Colors can be specified using:</p>
+
+                <ul>
+                    <li><code>Color Names</code>: <code>red</code>, <code>blue</code>, <code>green</code>.</li>
+                    <li><code>Hexadecimal</code>: <code>#ff0000</code>, <code>#00ff00</code>, <code>#0000ff</code>.</li>
+                    <li><code>RGB</code>: <code>rgb(255, 0, 0)</code>, <code>rgb(0, 255, 0)</code>, <code>rgb(0, 0, 255)</code>.</li>
+                    <li><code>RGBA</code>: <code>rgba(255, 0, 0, 0.5)</code>, <code>rgba(0, 255, 0, 0.5)</code>, <code>rgba(0, 0, 255, 0.5)</code>.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-border-none"></i>Border</h2>
+                <p>Borders can be styled using:</p>
+                <ul>
+                    <li><code>border-width</code>: Thickness of the border.</li>
+                    <li><code>border-style</code>: Style of the border (solid, dashed, dotted).</li>
+                    <li><code>border-color</code>: Color of the border.</li>
+                    <li><code>border-radius</code>: Curvature of the border corners.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-box"></i>Box Model</h2>
+                <p>The box model consists of:</p>
+                <ul>
+                    <li><code>Content</code>: The actual content of the box.</li>
+                    <li><code>Padding</code>: Space between the content and the border.</li>
+                    <li><code>Border</code>: The border around the content and padding.</li>
+                    <li><code>Margin</code>: Space outside the border.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-align-center"></i>Positioning</h2>
+                <p>Elements can be positioned using:</p>
+                <ul>
+                    <li><code>static</code>: Default positioning.</li>
+                    <li><code>relative</code>: Relative to its normal position.</li>
+                    <li><code>absolute</code>: Relative to the nearest positioned ancestor.</li>
+                    <li><code>fixed</code>: Relative to the viewport.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-font"></i>Text</h2>
+                <p>Text can be styled using:</p>
+                <ul>
+                    <li><code>font-family</code>: Font type.</li>
+                    <li><code>font-size</code>: Font size.</li>
+                    <li><code>font-weight</code>: Font weight (boldness).</li>
+                    <li><code>text-align</code>: Alignment of text.</li>
+                    <li><code>text-decoration</code>: Underline, overline, line-through.</li>
+                    <li><code>text-transform</code>: Uppercase, lowercase, capitalize.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-palette"></i>Background</h2>
+                <p>Backgrounds can be styled using:</p>
+                <ul>
+                    <li><code>background-color</code>: Background color.</li>
+                    <li><code>background-image</code>: Background image.</li>
+                    <li><code>background-repeat</code>: Repeat, no-repeat, repeat-x, repeat-y.</li>
+                    <li><code>background-position</code>: Position of the background image.</li>
+                    <li><code>background-size</code>: Size of the background image.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-align-justify"></i>Flexbox</h2>
+                <p>Flexbox is a layout model that allows elements to align and distribute space within a container.</p>
+                <ul>
+                    <li><code>display: flex</code>: Enables flexbox layout.</li>
+                    <li><code>flex-direction</code>: Direction of the main axis (row, column).</li>
+                    <li><code>justify-content</code>: Alignment along the main axis.</li>
+                    <li><code>align-items</code>: Alignment along the cross axis.</li>
+                    <li><code>flex</code>: Flex grow, shrink, basis.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-align-right"></i>Grid</h2>
+                <p>Grid is a layout model that allows elements to be placed in rows and columns.</p>
+                <ul>
+                    <li><code>display: grid</code>: Enables grid layout.</li>
+                    <li><code>grid-template-columns</code>: Defines the columns of the grid.</li>
+                    <li><code>grid-template-rows</code>: Defines the rows of the grid.</li>
+                    <li><code>grid-gap</code>: Space between grid items.</li>
+                    <li><code>grid-column</code>: Specifies the grid columns an item should span.</li>
+                    <li><code>grid-row</code>: Specifies the grid rows an item should span.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-link"></i>Link</h2>
+                <p>Links can be styled using:</p>
+                <ul>
+                    <li><code>text-decoration</code>: Underline, overline, line-through.</li>
+                    <li><code>color</code>: Text color.</li>
+                    <li><code>hover</code>: Styles applied when hovered over.</li>
+                    <li><code>active</code>: Styles applied when clicked.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-landmark"></i>Pseudo Classes and Elements</h2>
+                <p>Pseudo classes and elements are used to style elements based on their state or position in the document.</p>
+                <ul>
+                    <li><code>:hover</code>: Styles an element when hovered over.</li>
+                    <li><code>:active</code>: Styles an element when clicked.</li>
+                    <li><code>:focus</code>: Styles an element when focused.</li>
+                    <li><code>::before</code>: Inserts content before an element.</li>
+                    <li><code>::after</code>: Inserts content after an element.</li>
+                    <li><code>::first-child</code>: Styles the first child of an element.</li>
+                    <li><code>::last-child</code>: Styles the last child of an element.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-palette"></i>Media Queries</h2>
+                <p>Media queries are used to apply styles based on the device characteristics.</p>
+                <ul>
+                    <li><code>@media screen and (max-width: 600px)</code>: Styles applied when the screen width is 600px or less.</li>
+                    <li><code>@media print</code>: Styles applied when printing the page.</li>
+                    <li><code>@media (orientation: landscape)</code>: Styles applied when the device is in landscape orientation.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-down-left-and-up-right-to-center"></i>Transitions and Animations</h2>
+                <p>Transitions and animations are used to create movement and effects on elements.</p>
+                <ul>
+                    <li><code>transition</code>: Specifies the transition properties (property, duration, timing function, delay).</li>
+                    <li><code>animation</code>: Specifies the animation properties (name, duration, timing function, delay, iteration count).</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-palette"></i>Combinators</h2>
+                <p>Combinators are used to select elements based on their relationship in the document.</p>
+                <ul>
+                    <li><code>Descendant Selector (space)</code>: Selects an element that is a descendant of another element.</li>
+                    <li><code>Child Selector (>)</code>: Selects an element that is a direct child of another element.</li>
+                    <li><code>Adjacent Sibling Selector (+)</code>: Selects an element that is an adjacent sibling of another element.</li>
+                    <li><code>General Sibling Selector (~)</code>: Selects an element that is a sibling of another element.</li>
+                </ul>
+            </article>
+        </div>
+
+        <div class="footer">
+            <p>Erik Reitbauer 2024/25 WMC</p>
+        </div>
+    </body>
+</html>
